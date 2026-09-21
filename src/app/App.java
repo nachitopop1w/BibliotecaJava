@@ -31,26 +31,43 @@ public class App {
 
                 case 1:
 
-                    // TODO:
-                    // Mostrar todos los libros utilizando mostrarLibros()
+                    mostrarLibros(biblioteca);
 
                     break;
 
                 case 2:
 
-                    // TODO:
-                    // Solicitar el número del libro.
-                    // Llamar al método prestar().
-                    // Manejar las excepciones correspondientes.
+                    System.out.print("Ingrese el número del libro: ");
+                    int numeroPrestar = scanner.nextInt();
+
+                    try {
+
+                        biblioteca[numeroPrestar - 1].prestar();
+                        System.out.println("Libro prestado correctamente.");
+
+                    } catch (Exception e) {
+
+                        System.out.println("No se pudo prestar el libro: " + e.getMessage());
+
+                    }
 
                     break;
 
                 case 3:
 
-                    // TODO:
-                    // Solicitar el número del libro.
-                    // Llamar al método devolver().
-                    // Manejar las excepciones correspondientes.
+                    System.out.print("Ingrese el número del libro: ");
+                    int numeroDevolver = scanner.nextInt();
+
+                    try {
+
+                        biblioteca[numeroDevolver - 1].devolver();
+                        System.out.println("Libro devuelto correctamente.");
+
+                    } catch (Exception e) {
+
+                        System.out.println("No se pudo devolver el libro: " + e.getMessage());
+
+                    }
 
                     break;
 
@@ -87,14 +104,11 @@ public class App {
 
     public static void mostrarLibros(Libro[] biblioteca) {
 
-        // TODO:
-        // Recorrer el arreglo utilizando un ciclo.
-        // Mostrar cada libro junto con su número.
-        //
-        // Ejemplo:
-        //
-        // 1. Java Básico
-        // 2. Python para Todos
+        for (int i = 0; i < biblioteca.length; i++) {
+
+            System.out.println((i + 1) + ". " + biblioteca[i]);
+
+        }
 
     }
 
